@@ -4,19 +4,18 @@ metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"nginx"},"name":"nginx-deployment","namespace":"default"},"spec":{"replicas":2,"selector":{"matchLabels":{"app":"nginx"}},"template":{"metadata":{"labels":{"app":"nginx"}},"spec":{"containers":[{"image":"nginx:1.16","name":"nginx","ports":[{"containerPort":8080}]}]}}}}
-  creationTimestamp: "2020-01-24T10:54:56Z"
-  generation: 1
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"nginx"},"name":"nginx-deployment","namespace":"default"},"spec":{"replicas":3,"selector":{"matchLabels":{"app":"nginx"}},"template":{"metadata":{"labels":{"app":"nginx"}},"spec":{"containers":[{"image":"nginx:1.16","name":"nginx","ports":[{"containerPort":8080}]}]}}}}
+  creationTimestamp: "2023-06-02T11:19:24Z"
+  generation: 2
   labels:
     app: nginx
   name: nginx-deployment
   namespace: default
-  resourceVersion: "96574"
-  selfLink: /apis/apps/v1/namespaces/default/deployments/nginx-deployment
-  uid: e1075fa3-6468-43d0-83c0-63fede0dae51
+  resourceVersion: "804709"
+  uid: a25f65af-19e2-4ec9-8473-97523e086f9d
 spec:
   progressDeadlineSeconds: 600
-  replicas: 2
+  replicas: 3
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -48,21 +47,21 @@ spec:
       securityContext: {}
       terminationGracePeriodSeconds: 30
 status:
-  availableReplicas: 2
+  availableReplicas: 3
   conditions:
-  - lastTransitionTime: "2020-01-24T10:54:59Z"
-    lastUpdateTime: "2020-01-24T10:54:59Z"
+  - lastTransitionTime: "2023-06-02T11:19:24Z"
+    lastUpdateTime: "2023-06-02T11:19:33Z"
+    message: ReplicaSet "nginx-deployment-f4b7bbcbc" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  - lastTransitionTime: "2023-06-02T11:25:55Z"
+    lastUpdateTime: "2023-06-02T11:25:55Z"
     message: Deployment has minimum availability.
     reason: MinimumReplicasAvailable
     status: "True"
     type: Available
-  - lastTransitionTime: "2020-01-24T10:54:56Z"
-    lastUpdateTime: "2020-01-24T10:54:59Z"
-    message: ReplicaSet "nginx-deployment-7d64f4b574" has successfully progressed.
-    reason: NewReplicaSetAvailable
-    status: "True"
-    type: Progressing
-  observedGeneration: 1
-  readyReplicas: 2
-  replicas: 2
-  updatedReplicas: 2
+  observedGeneration: 2
+  readyReplicas: 3
+  replicas: 3
+  updatedReplicas: 3
